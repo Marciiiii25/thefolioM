@@ -17,13 +17,15 @@ connectDB(); //ConnecttoMongoDB
 
 //──Middleware─────────────────────────────────────────────────
 //AllowReact(port3000)tocall this server
-app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://thefolio.vercel.app", // ←your Vercel URL (update afterdeployment)
-  ],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "thefolio-m-ucvv.vercel.app", // ←your Vercel URL (update afterdeployment)
+    ],
+    credentials: true,
+  }),
+);
 
 //ParseincomingJSONrequestbodies
 app.use(express.json());
