@@ -1,18 +1,58 @@
-# Git Push Fix TODO
+# Deployment Fix: Admin Login on Render
 
-## Steps:
+## Current Status
 
-- [ ] Step 1: Clear old Git credentials from Windows Credential Manager.
-      Command: `cmdkey /list | findstr github` then `cmdkey /delete:git:https://github.com`
-- [ ] Step 2: Fork https://github.com/Marciiiii25/thefolioM to your GitHub account (shilohjarsdel16/thefolioM) if not already.
-- [ ] Step 3: Update remote origin to your fork.
-      Command: `git remote set-url origin https://github.com/shilohjarsdel16/thefolioM.git`
-- [ ] Step 4: Verify remote.
-      Command: `git remote -v`
-- [ ] Step 5: Commit any local changes if needed (`git add . && git commit -m "Update"`)
-- [ ] Step 6: Push to mainM.
-      Command: `git push -u origin mainM`
-- [ ] Step 7: (Optional) Set upstream for original repo sync.
-      Commands: `git remote add upstream https://github.com/Marciiiii25/thefolioM.git` then `git pull upstream main --allow-unrelated-histories`
+✅ Plan approved  
+🔄 Creating TODO.md and implementing auto-seeding...
 
-**Next command to run: Clear credentials.**
+## Step-by-Step Plan
+
+### 1. Set Render Environment Variables (Manual - Do This First)
+
+In your Render Dashboard → Your Backend Service → Environment:
+
+```
+MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/yourdbname
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+ADMIN_EMAIL=admin@thefolio.com
+ADMIN_PASSWORD=Admin@1234
+ADMIN_NAME=TheFolio Admin
+```
+
+**Get MONGO_URI:**
+
+- MongoDB Atlas: Connect → Drivers → Copy connection string
+- Render PostgreSQL? → No, need MongoDB. Create Atlas cluster (free tier)
+
+### 2. Backend Changes (Auto-Implemented)
+
+- ✅ `backend/server.js`: Added auto-seeding on startup (checks if admin exists → seeds if missing)
+- ✅ `backend/package.json`: Added `seed` script for manual run
+
+### 3. Deploy & Test
+
+```
+# Redeploy backend on Render (auto-triggers server.js → seeds admin)
+# Test login: admin@thefolio.com / Admin@1234
+```
+
+### 4. Frontend API URL (if separate services)
+
+- Update `frontend/src/api/axios.js` REACT_APP_API_URL=your-render-backend-url/api
+
+### 5. Manual Seed (Alternative/Verification)
+
+```
+# Render Shell: cd backend && npm install && npm run seed
+```
+
+## Expected Result
+
+- Server starts → DB connects → Admin auto-created → Login works on deploy!
+
+## Next Steps After This
+
+- [ ] Confirm Render URLs/services
+- [ ] Set env vars & redeploy
+- [ ] Test admin login
+- [ ] Update frontend API baseURL if needed

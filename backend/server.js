@@ -3,6 +3,7 @@ require("dotenv").config(); // Load .env variables FIRST
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const mongoose = require("mongoose");
 const connectDB = require("./config/db");
 
 //Importroutes(youwillcreatethese files in the next steps)
@@ -52,8 +53,41 @@ app.use((err, req, res, next) => {
   });
 });
 
-//──StartServer──────────────────────────────────────────────
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+const seedAdminIfNeeded = async () => {
+  try {
+    const User = require("./models/User");
+    const adminEmail = process.env.ADMIN_EMAIL || "admin@thefolio.com";
+    const existingAdmin = await User.findOne({ email: adminEmail });
+    if (!existingAdmin) {
+      console.log("🌱 No admin found. Auto-seeding admin account...");
+      const { execSync } = require("child_process");
+      execSync("npm run seed", { stdio: "inherit", cwd: __dirname });
+      console.log("✅ Admin seeded successfully!");
+    } else {
+      console.log("✅ Admin account already exists.");
+    }
+  } catch (error) {
+    console.warn("⚠️ Auto-seed skipped:", error.message);
+  }
+};
+
+// Wait for DB connection, seed admin, start server
+const startServer = async () => {
+  await new Promise((resolve) => {
+    const checkDB = setInterval(() => {
+      if (mongoose.connection.readyState === 1) {
+        // connected
+        clearInterval(checkDB);
+        resolve();
+      }
+    }, 500);
+  });
+  await seedAdminIfNeeded();
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+  });
+};
+startServer();
+
+module.exports = app; // for testing
