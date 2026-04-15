@@ -189,7 +189,6 @@ const PostPage = () => {
                 src={`http://localhost:5000/uploads/${post.image}`}
                 alt={`Featured for ${post.title}`}
                 className="post-image"
-                role="img"
                 loading="lazy"
               />
             )}

@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "../App.css";
 
+// Admin dashboard page component
 const AdminPage = () => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 import API from "../api/axios";
 import "../App.css";
 import Nav from "../components/Nav";
@@ -12,7 +11,6 @@ const CreatePostPage = () => {
   const [image, setImage] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { user } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {

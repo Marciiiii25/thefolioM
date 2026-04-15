@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 import API from "../api/axios.js";
 import "../App.css";
 import Footer from "../components/Footer";
@@ -19,7 +18,6 @@ function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const { setUser } = useAuth(); // To update user after register
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -99,7 +97,7 @@ function RegisterPage() {
     }
 
     try {
-      const response = await API.post("/auth/register", {
+      await API.post("/auth/register", {
         fullname: formData.fullname.trim(),
         username: formData.username.trim(),
         email: formData.email.trim(),

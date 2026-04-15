@@ -170,7 +170,6 @@ function HomePage() {
               const canEdit =
                 user &&
                 (user.role === "admin" || post.author?._id === user._id);
-              const isAdminOwned = post.author?.role === "admin";
 
               return (
                 <div
