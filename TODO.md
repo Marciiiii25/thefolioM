@@ -1,23 +1,18 @@
-# ✅ Contact Messages to Admin Dashboard Feature - COMPLETE
+# Git Push Fix TODO
 
 ## Steps:
 
-- [x] Step 1: Update ContactPage.js to send API POST /contact on form submit
-- [x] Step 2: Update AdminPage.js to add Messages tab with fetch/display
-- [x] Step 3: Test functionality (login user → contact → admin check)
-- [x] Complete ✅
+- [ ] Step 1: Clear old Git credentials from Windows Credential Manager.
+      Command: `cmdkey /list | findstr github` then `cmdkey /delete:git:https://github.com`
+- [ ] Step 2: Fork https://github.com/Marciiiii25/thefolioM to your GitHub account (shilohjarsdel16/thefolioM) if not already.
+- [ ] Step 3: Update remote origin to your fork.
+      Command: `git remote set-url origin https://github.com/shilohjarsdel16/thefolioM.git`
+- [ ] Step 4: Verify remote.
+      Command: `git remote -v`
+- [ ] Step 5: Commit any local changes if needed (`git add . && git commit -m "Update"`)
+- [ ] Step 6: Push to mainM.
+      Command: `git push -u origin mainM`
+- [ ] Step 7: (Optional) Set upstream for original repo sync.
+      Commands: `git remote add upstream https://github.com/Marciiiii25/thefolioM.git` then `git pull upstream main --allow-unrelated-histories`
 
-**Feature implemented:**
-
-- Users/members (logged in) can send messages via Contact page → saved to DB with sender ID.
-- Admins see all messages in new "Messages" tab on dashboard (fetches /admin/messages).
-- Prefills user name/email, error/success handling, responsive table.
-
-**To test:**
-
-1. `cd backend && npm start` (if not running)
-2. `cd frontend && npm start`
-3. Login as user → Contact page → submit message.
-4. Login as admin → AdminPage → Messages tab → verify displays.
-
-Done!
+**Next command to run: Clear credentials.**
