@@ -114,7 +114,7 @@ const ProfilePage = () => {
   };
 
   const picSrc = user?.profilePic
-    ? `http://localhost:5000/uploads/${user.profilePic}`
+    ? `${process.env.REACT_APP_API_URL?.replace("/api", "")}/uploads/${user.profilePic}`
     : "/default-avatar.png";
 
   return (
