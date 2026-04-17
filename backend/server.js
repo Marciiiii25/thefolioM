@@ -47,8 +47,9 @@ app.use("/api/contact", contactRoutes);
 // Serve React app build files from frontend/build
 const frontendBuildPath = path.join(__dirname, "..", "frontend", "build");
 app.use(express.static(frontendBuildPath));
-app.get("/*", (req, res, next) => {
+app.use((req, res, next) => {
   if (
+    req.method !== "GET" ||
     req.originalUrl.startsWith("/api") ||
     req.originalUrl.startsWith("/uploads")
   ) {
