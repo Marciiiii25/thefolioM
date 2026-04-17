@@ -1,58 +1,12 @@
-# Deployment Fix: Admin Login on Render
+# Git Push Fix TODO
 
-## Current Status
+## Status: In Progress
 
-✅ Plan approved  
-🔄 Creating TODO.md and implementing auto-seeding...
+1. [x] Gather project understanding (file structure, .git/config, git configs).
+2. [x] Clear cached Git credentials using Windows cmdkey (non-interactive).
+3. [x] Verify credential deletion.
+4. [x] Guide user to create/obtain GitHub PAT if needed.
+5. [ ] Test `git push` (user will enter new creds: username Marciiiii25 + PAT).
+6. [ ] Mark complete.
 
-## Step-by-Step Plan
-
-### 1. Set Render Environment Variables (Manual - Do This First)
-
-In your Render Dashboard → Your Backend Service → Environment:
-
-```
-MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/yourdbname
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-ADMIN_EMAIL=admin@thefolio.com
-ADMIN_PASSWORD=Admin@1234
-ADMIN_NAME=TheFolio Admin
-```
-
-**Get MONGO_URI:**
-
-- MongoDB Atlas: Connect → Drivers → Copy connection string
-- Render PostgreSQL? → No, need MongoDB. Create Atlas cluster (free tier)
-
-### 2. Backend Changes (Auto-Implemented)
-
-- ✅ `backend/server.js`: Added auto-seeding on startup (checks if admin exists → seeds if missing)
-- ✅ `backend/package.json`: Added `seed` script for manual run
-
-### 3. Deploy & Test
-
-```
-# Redeploy backend on Render (auto-triggers server.js → seeds admin)
-# Test login: admin@thefolio.com / Admin@1234
-```
-
-### 4. Frontend API URL (if separate services)
-
-- Update `frontend/src/api/axios.js` REACT_APP_API_URL=your-render-backend-url/api
-
-### 5. Manual Seed (Alternative/Verification)
-
-```
-# Render Shell: cd backend && npm install && npm run seed
-```
-
-## Expected Result
-
-- Server starts → DB connects → Admin auto-created → Login works on deploy!
-
-## Next Steps After This
-
-- [ ] Confirm Render URLs/services
-- [ ] Set env vars & redeploy
-- [ ] Test admin login
-- [ ] Update frontend API baseURL if needed
+**Next Step**: Run `git push` and enter username `Marciiiii25` + PAT.
