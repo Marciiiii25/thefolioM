@@ -23,6 +23,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "thefolio-m-yumd.vercel.app",
+      "thefolio-m-yumd-1s4x7mtae-marcenita-aquinos-projects.vercel.app",
       "https://thefolio-m-yumd-9d7khmaoh-marcenita-aquinos-projects.vercel.app",
     ],
     credentials: true,
@@ -42,6 +43,16 @@ app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/contact", contactRoutes);
+
+// Serve React app build files from frontend/build
+const frontendBuildPath = path.join(__dirname, "..", "frontend", "build");
+app.use(express.static(frontendBuildPath));
+app.get("/*", (req, res, next) => {
+  if (req.originalUrl.startsWith("/api") || req.originalUrl.startsWith("/uploads")) {
+    return next();
+  }
+  res.sendFile(path.join(frontendBuildPath, "index.html"));
+});
 
 // ── Global Error Handler ──────────────────────────────────
 app.use((err, req, res, next) => {
