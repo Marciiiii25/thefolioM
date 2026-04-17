@@ -1,6 +1,13 @@
 import axios from "axios";
+
+const rawBaseURL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+const normalizedBaseURL = rawBaseURL.replace(/\/+$|\/api\/+$/g, "");
+const baseURL = normalizedBaseURL.endsWith("/api")
+  ? normalizedBaseURL
+  : `${normalizedBaseURL}/api`;
+
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000/api",
+  baseURL,
 });
 
 // This interceptor runs before EVERY request.

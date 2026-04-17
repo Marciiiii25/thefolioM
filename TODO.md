@@ -1,1 +1,1 @@
-1. [✅] Update backend/routes/auth.routes.js register validation logic (validation + bio cleanup)
+# Task Progress: Fix Express PathError in server.js\n\n## TODO Steps\n1. [x] Create TODO.md with plan steps (done)\n2. [x] Edit backend/server.js to fix app.get("/_") to app.get(&#39;_&#39;)\n3. [x] Verify fix (server.js now uses app.get("\*", ...) which resolves PathError)\n4. Complete task with attempt_completion
