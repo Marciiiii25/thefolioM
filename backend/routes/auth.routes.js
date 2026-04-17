@@ -11,22 +11,20 @@ const generateToken = (id) =>
 // ── POST /api/auth/register ───────────────────────────────────
 router.post("/register", async (req, res) => {
   try {
-    if (!req.body)
+    if (!req.body || Object.keys(req.body).length === 0)
       return res.status(400).json({ message: "Request body is required" });
-    const {
-      fullname,
-      username,
-      dob,
-      email,
-      password,
-      gender,
-      account_type,
-      level,
-    } = req.body || {};
+    console.log("Register req.body:", JSON.stringify(req.body));
+    const fullname = (
+      req.body.name ||
+      req.body.Fullname ||
+      req.body.fullname ||
+      ""
+    ).trim();
+    const { email, password } = req.body || {};
 
-    if (!fullname?.trim() || !email || !password) {
+    if (!fullname || !email || !password) {
       return res.status(400).json({
-        message: "Fullname, email, and password are required",
+        message: "Name, email, and password are required",
       });
     }
 
@@ -48,6 +46,7 @@ router.post("/register", async (req, res) => {
     }
 
     // Safely build bio from available fields
+    const { username, dob, gender, account_type, level } = req.body || {};
     const bioParts = [
       username ? `Username: ${username}` : "",
       dob ? `DOB: ${dob}` : "",
