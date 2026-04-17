@@ -22,7 +22,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "thefolio-m-ucvv.vercel.app", // ←your Vercel URL (update afterdeployment)
+      "thefolio-m-yumd.vercel.app", // ←your Vercel URL (update afterdeployment)
     ],
     credentials: true,
   }),
