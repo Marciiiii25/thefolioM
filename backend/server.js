@@ -22,8 +22,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "thefolio-m-yumd.vercel.app",
-      "thefolio-m-yumd-1s4x7mtae-marcenita-aquinos-projects.vercel.app",
+      "https://thefolio-m-yumd.vercel.app",
+      "https://thefolio-m-yumd-1s4x7mtae-marcenita-aquinos-projects.vercel.app",
       "https://thefolio-m-yumd-9d7khmaoh-marcenita-aquinos-projects.vercel.app",
     ],
     credentials: true,
