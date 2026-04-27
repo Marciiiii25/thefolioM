@@ -26,12 +26,8 @@ function Nav({ children }) {
       <div className="nav-header-wrapper">
         <header className="nav-header">
           <Link to="/home" className="logo">
-            <img
-              src="/malogo.png"
-              alt="LeeVibes Logo"
-              className="profile-pic"
-            />
-            MARCENITA
+            <div style={{ fontSize: "32px" }}>🐱</div>
+            MEOW WORLD
           </Link>
           <nav>
             <ul className="nav-list">
@@ -40,7 +36,7 @@ function Nav({ children }) {
                   to="/home"
                   className={`nav-link ${isActive("/home") ? "active" : ""}`}
                 >
-                  HOME
+                  🏠 HOME
                 </Link>
               </li>
               <li>
@@ -48,7 +44,7 @@ function Nav({ children }) {
                   to="/about"
                   className={`nav-link ${isActive("/about") ? "active" : ""}`}
                 >
-                  ABOUT
+                  📚 ABOUT
                 </Link>
               </li>
               {(!user || user.role !== "admin") && (
@@ -57,7 +53,7 @@ function Nav({ children }) {
                     to="/contact"
                     className={`nav-link ${isActive("/contact") ? "active" : ""}`}
                   >
-                    CONTACT
+                    📞 CONTACT
                   </Link>
                 </li>
               )}
@@ -68,7 +64,7 @@ function Nav({ children }) {
                       to="/register"
                       className={`nav-link ${isActive("/register") ? "active" : ""}`}
                     >
-                      REGISTER
+                      ✨ REGISTER
                     </Link>
                   </li>
                   <li>
@@ -76,7 +72,7 @@ function Nav({ children }) {
                       to="/login"
                       className={`nav-link ${isActive("/login") ? "active" : ""}`}
                     >
-                      LOGIN
+                      🔐 LOG IN
                     </Link>
                   </li>
                 </>
@@ -88,7 +84,7 @@ function Nav({ children }) {
                       to="/create-post"
                       className={`nav-link ${isActive("/create-post") ? "active" : ""}`}
                     >
-                      CREATE POST
+                      ✍️ SHARE STORY
                     </Link>
                   </li>
                   <li>
@@ -96,7 +92,7 @@ function Nav({ children }) {
                       to="/profile"
                       className={`nav-link ${isActive("/profile") ? "active" : ""}`}
                     >
-                      PROFILE
+                      👤 PROFILE
                     </Link>
                   </li>
                 </>
@@ -108,7 +104,7 @@ function Nav({ children }) {
                       to="/create-post"
                       className={`nav-link ${isActive("/create-post") ? "active" : ""}`}
                     >
-                      NEW POST
+                      ✍️ NEW POST
                     </Link>
                   </li>
                   <li>
@@ -116,7 +112,7 @@ function Nav({ children }) {
                       to="/admin"
                       className={`nav-link ${isActive("/admin") ? "active" : ""}`}
                     >
-                      ADMIN
+                      🔧 ADMIN
                     </Link>
                   </li>
                   <li>
@@ -124,7 +120,7 @@ function Nav({ children }) {
                       to="/profile"
                       className={`nav-link ${isActive("/profile") ? "active" : ""}`}
                     >
-                      ADMIN PROFILE
+                      👑 ADMIN PROFILE
                     </Link>
                   </li>
                 </>
@@ -143,7 +139,7 @@ function Nav({ children }) {
                       fontFamily: "inherit",
                     }}
                   >
-                    LOGOUT
+                    🚪 LOGOUT
                   </button>
                 </li>
               )}

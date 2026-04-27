@@ -121,8 +121,8 @@ const ProfilePage = () => {
     <>
       <Nav />
       <div className="plain-section">
-        <h1 className="map-title">My Profile</h1>
-        <p>Manage your account details and settings.</p>
+        <h1 className="map-title">🐱 Your Cat Lover Profile 🐱</h1>
+        <p>Manage your account details and purr-sonalization settings.</p>
       </div>
 
       <div className="container">
@@ -191,10 +191,10 @@ const ProfilePage = () => {
         <div className="form-card" style={{ marginBottom: "40px" }}>
           <div className="form-wrapper">
             <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
-              Edit Profile
+              ✏️ Edit Your Cat Profile
             </h3>
             <form onSubmit={handleProfile} className="styled-form">
-              <label htmlFor="name">Display Name</label>
+              <label htmlFor="name">🏷️ Your Cat Lover Name</label>
               <input
                 id="name"
                 type="text"
@@ -205,17 +205,17 @@ const ProfilePage = () => {
                 disabled={profileLoading}
               />
 
-              <label htmlFor="bio">Bio</label>
+              <label htmlFor="bio">📝 About You & Your Cats</label>
               <textarea
                 id="bio"
-                placeholder="Tell us about yourself..."
+                placeholder="Tell us about yourself and your favorite cats..."
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
                 rows={4}
                 disabled={profileLoading}
               />
 
-              <label htmlFor="profilePic">Change Profile Picture</label>
+              <label htmlFor="profilePic">📸 Update Your Photo</label>
               <input
                 id="profilePic"
                 type="file"
@@ -225,7 +225,7 @@ const ProfilePage = () => {
               />
 
               <button type="submit" disabled={profileLoading}>
-                {profileLoading ? "Saving..." : "Save Profile"}
+                {profileLoading ? "Saving..." : "🐾 Save Changes 🐾"}
               </button>
             </form>
           </div>
@@ -283,30 +283,35 @@ const ProfilePage = () => {
         <div className="form-card" style={{ marginTop: "40px" }}>
           <div className="form-wrapper">
             <h3 style={{ textAlign: "center", marginBottom: "15px" }}>
-              My Published Posts
+              🐱 My Published Cat Stories
             </h3>
             {postsLoading ? (
-              <p>Loading your posts...</p>
+              <p>Loading your cat stories...</p>
             ) : postsError ? (
               <p className="error-msg">{postsError}</p>
             ) : posts.length === 0 ? (
-              <p>No posts yet. Create one to see it here.</p>
+              <p>
+                No stories yet. Create your first cat story to see it here! 🐾
+              </p>
             ) : (
               <ul style={{ listStyleType: "none", padding: 0 }}>
                 {posts.map((p) => (
                   <li key={p._id} style={{ marginBottom: "14px" }}>
                     <Link
                       to={`/posts/${p._id}`}
-                      style={{ textDecoration: "none", color: "var(--royal)" }}
+                      style={{
+                        textDecoration: "none",
+                        color: "var(--cat-orange)",
+                      }}
                     >
-                      <strong>{p.title}</strong>
+                      <strong>😸 {p.title}</strong>
                     </Link>
                     <p style={{ margin: "4px 0" }}>
                       {p.body.slice(0, 90)}
                       {p.body.length > 90 ? "..." : ""}
                     </p>
                     <small>
-                      Published on {new Date(p.createdAt).toLocaleDateString()}
+                      Shared on {new Date(p.createdAt).toLocaleDateString()}
                     </small>
                   </li>
                 ))}

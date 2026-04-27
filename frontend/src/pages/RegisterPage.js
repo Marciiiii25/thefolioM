@@ -123,16 +123,16 @@ function RegisterPage() {
     <>
       {/* Plain Text Section */}
       <section className="plain-section">
-        <h1>Register for Updates</h1>
+        <h1>🐱 Join the Meow World Family 🐱</h1>
         <p>
-          Sign up to receive updates about my projects, achievements, and
-          creative journey.
+          Sign up to become part of our purrfect community of cat lovers! Share
+          your cat stories, tips, and connect with fellow feline enthusiasts.
         </p>
       </section>
 
       {/* Sign-Up Form Card */}
       <section className="content-section">
-        <h2>Sign-Up Form</h2>
+        <h2>Create Your Cat Lover Account</h2>
 
         <div className="form-card">
           <div className="form-wrapper">
@@ -171,11 +171,11 @@ function RegisterPage() {
                 </span>
               )}
 
-              <label htmlFor="username">Preferred Username:</label>
+              <label htmlFor="username">Preferred Cat Username:</label>
               <input
                 type="text"
                 id="username"
-                placeholder="Username"
+                placeholder="e.g. CatLover123, WhiskerKing"
                 value={formData.username}
                 onChange={handleChange}
               />
@@ -231,19 +231,19 @@ function RegisterPage() {
                   checked={formData.agree}
                   onChange={handleChange}
                 />
-                I agree to terms and conditions
+                I agree to the purrfection laws and cat-loving code of conduct
               </label>
 
               <button type="submit" disabled={loading}>
-                {loading ? "Registering..." : "Register"}
+                {loading ? "Registering..." : "🐾 Create My Cat Account 🐾"}
               </button>
               <p>
-                Already have an account? <Link to="/login">Login here</Link>
+                Already a cat lover? <Link to="/login">Log in here</Link>
               </p>
             </form>
           </div>
           <div className="form-image">
-            <img src="/decorativeimage.png" alt="Decorative Register" />
+            <img src="/decorativecat.png" alt="Cute Cat" />
           </div>
         </div>
       </section>

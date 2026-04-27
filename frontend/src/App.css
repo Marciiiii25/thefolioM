@@ -1,9 +1,13 @@
 :root {
-  --navy: #3d230a;
-  --royal: #aa6b1c;
-  --light-blue: #fcc36e;
-  --accent: #f7c02f;
-  --white: #ecdab3;
+  --navy: #2d1b4e;
+  --royal: #8b4513;
+  --light-blue: #fef7e9;
+  --accent: #ff6b9d;
+  --white: #f5f5f5;
+  --cat-purple: #9370db;
+  --cat-orange: #ff8c42;
+  --cat-cream: #fffaed;
+  --cat-gray: #8b8680;
 }
 
 * {
@@ -14,8 +18,8 @@
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: var(--light-blue);
-  color: #3d230a;
+  background-color: var(--cat-cream);
+  color: var(--navy);
   line-height: 1.6;
   transition:
     background 0.3s ease,
@@ -45,7 +49,6 @@ body.dark-mode nav ul li a.active {
 }
 
 body.dark-mode .hero {
-  background-image: url("/public/marce.png");
   color: #ecdab3;
 }
 
@@ -242,7 +245,7 @@ nav ul li a.active {
 .hero {
   min-height: 80vh;
 
-  background-image: url("/public/marce.png");
+  background: linear-gradient(135deg, #9370db 0%, #ff8c42 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -260,12 +263,12 @@ nav ul li a.active {
 }
 
 .hero h1 {
-  color: #faf611;
+  color: #fff;
   margin-top: 10px;
-  text-shadow: 0 5px 10px #3d230a;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   font-size: 3.5rem;
-  background-color: #423106;
-  opacity: 0.9;
+  background-color: rgba(45, 27, 78, 0.7);
+  opacity: 0.95;
   border-radius: 15px;
 }
 
@@ -274,10 +277,10 @@ nav ul li a.active {
   margin-top: 20px;
   font-size: 20px;
   font-weight: 500;
-  color: #e3e006;
-  text-shadow: 0 5px 10px #3d230a;
-  background-color: #423106;
-  opacity: 0.9;
+  color: #fff;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(45, 27, 78, 0.7);
+  opacity: 0.95;
   border-radius: 15px;
 }
 

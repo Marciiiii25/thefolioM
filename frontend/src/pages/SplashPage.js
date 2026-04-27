@@ -14,7 +14,7 @@ function SplashPage() {
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
-    backgroundColor: "var(--light-blue)",
+    background: "linear-gradient(135deg, #9370db 0%, #ff8c42 100%)",
     margin: 0,
     fontFamily: '"Segoe UI", Arial, sans-serif',
     overflow: "hidden",
@@ -35,22 +35,23 @@ function SplashPage() {
   };
 
   const logoH1Style = {
-    color: "var(--navy)",
+    color: "#fff",
     fontSize: "2.5rem",
     margin: 0,
+    textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
   };
 
-  const basketballsStyle = {
+  const catsStyle = {
     display: "flex",
     justifyContent: "center",
     gap: "10px",
     marginTop: "20px",
   };
 
-  const basketballStyle = {
+  const catStyle = {
     fontSize: "50px",
     animation: "bounce 2s infinite ease-in-out",
-    opacity: 0.7,
+    opacity: 0.9,
   };
 
   return (
@@ -76,56 +77,53 @@ function SplashPage() {
               transform: translateY(-20px);
             }
           }
-          .basketball:nth-child(1) {
+          .cat:nth-child(1) {
             animation-delay: 0s;
           }
-          .basketball:nth-child(2) {
+          .cat:nth-child(2) {
             animation-delay: 0.5s;
           }
-          .basketball:nth-child(3) {
+          .cat:nth-child(3) {
             animation-delay: 1s;
           }
-          .basketball:nth-child(4) {
+          .cat:nth-child(4) {
             animation-delay: 1.5s;
           }
-          .basketball:nth-child(5) {
+          .cat:nth-child(5) {
             animation-delay: 2s;
           }
         `}
       </style>
       <div style={splashContentStyle}>
         <div style={{ textAlign: "center" }}>
-          <img src="malogo.png" alt="Marcenita Logo" style={logoImgStyle} />
-          <h1 style={logoH1Style}>MARCENITA</h1>
+          <div style={{ fontSize: "100px", marginBottom: "20px" }}>🐱</div>
+          <h1 style={logoH1Style}>MEOW WORLD</h1>
         </div>
-        <p>Welcome to My Portfolio</p>
-        <div style={basketballsStyle}>
-          <div className="basketball" style={basketballStyle}>
-            🏀
+        <p
+          style={{
+            color: "#fff",
+            fontSize: "1.3rem",
+            marginBottom: "30px",
+            textShadow: "1px 1px 2px rgba(0,0,0,0.2)",
+          }}
+        >
+          Welcome to the Purrfect Destination
+        </p>
+        <div style={catsStyle}>
+          <div className="cat" style={catStyle}>
+            🐱
           </div>
-          <div
-            className="basketball"
-            style={{ ...basketballStyle, animationDelay: "0.5s" }}
-          >
-            🏀
+          <div className="cat" style={{ ...catStyle, animationDelay: "0.5s" }}>
+            😸
           </div>
-          <div
-            className="basketball"
-            style={{ ...basketballStyle, animationDelay: "1s" }}
-          >
-            🏀
+          <div className="cat" style={{ ...catStyle, animationDelay: "1s" }}>
+            😻
           </div>
-          <div
-            className="basketball"
-            style={{ ...basketballStyle, animationDelay: "1.5s" }}
-          >
-            🏀
+          <div className="cat" style={{ ...catStyle, animationDelay: "1.5s" }}>
+            😼
           </div>
-          <div
-            className="basketball"
-            style={{ ...basketballStyle, animationDelay: "2s" }}
-          >
-            🏀
+          <div className="cat" style={{ ...catStyle, animationDelay: "2s" }}>
+            😽
           </div>
         </div>
       </div>

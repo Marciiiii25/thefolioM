@@ -218,9 +218,11 @@ const PostPage = () => {
           </article>
 
           <section className="comments-section">
-            <h2>Comments ({comments.length})</h2>
+            <h2>💬 Community Comments ({comments.length})</h2>
             {comments.length === 0 ? (
-              <p className="no-comments">No comments yet.</p>
+              <p className="no-comments">
+                No comments yet. Be the first to share your thoughts! 🐱
+              </p>
             ) : (
               <div className="comments-list">
                 {comments.map((comment) => (
@@ -237,7 +239,7 @@ const PostPage = () => {
                       <div style={{ flex: 1 }}>
                         <strong>
                           {comment.author?.role === "admin"
-                            ? "Admin"
+                            ? "👑 Admin"
                             : comment.author?.name || "Admin"}
                         </strong>
                         <br />
@@ -267,11 +269,11 @@ const PostPage = () => {
 
             <section className="add-comment-section">
               <form onSubmit={handleCommentSubmit} className="comment-form">
-                <h3>Add a Comment</h3>
+                <h3>😸 Share Your Meow</h3>
                 <textarea
                   value={newComment}
                   onChange={(e) => setNewComment(e.target.value)}
-                  placeholder="Write your comment here..."
+                  placeholder="Share your cat thoughts, experiences, or questions..."
                   required
                   disabled={submittingComment}
                   rows={4}
@@ -282,7 +284,7 @@ const PostPage = () => {
                   disabled={submittingComment || !user}
                   className="btn-primary"
                 >
-                  {submittingComment ? "Posting..." : "Post Comment"}
+                  {submittingComment ? "Posting..." : "🐾 Post Comment 🐾"}
                 </button>
               </form>
             </section>

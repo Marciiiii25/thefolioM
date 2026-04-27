@@ -5,17 +5,20 @@ function AboutPage() {
   return (
     <>
       <section className="content-section">
-        <h2>My Passion Flip Cards</h2>
+        <h2>🐱 Purrfect Cat Breeds 🐱</h2>
         <div className="flip-cards-container">
           {/* Card 1 */}
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img src="/basketball1.jpeg" alt="Playing Basketball" />
+                <img src="/persian.jpeg" alt="Persian Cat" />
               </div>
               <div className="flip-card-back">
-                <h3>Basketball</h3>
-                <p>Playing basketball helps me stay active and strong.</p>
+                <h3>🦁 Persian</h3>
+                <p>
+                  Elegant and calm, Persian cats are known for their luxurious
+                  long fur and gentle temperament. Perfect for indoor homes!
+                </p>
               </div>
             </div>
           </div>
@@ -24,13 +27,13 @@ function AboutPage() {
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img src="/drums1.jpeg" alt="Drumming in Band" />
+                <img src="/siamese.jpeg" alt="Siamese Cat" />
               </div>
               <div className="flip-card-back">
-                <h3>Drums</h3>
+                <h3>✨ Siamese</h3>
                 <p>
-                  Playing the drums allows me to express my feelings and enjoy
-                  music.
+                  Vocal and intelligent, Siamese cats are known for their
+                  striking blue eyes and sleek dark points. Very affectionate!
                 </p>
               </div>
             </div>
@@ -40,13 +43,13 @@ function AboutPage() {
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img src="/cooking.png" alt="Creative Cooking" />
+                <img src="/mainecoon.jpeg" alt="Maine Coon" />
               </div>
               <div className="flip-card-back">
-                <h3>Cooking</h3>
+                <h3>🦅 Maine Coon</h3>
                 <p>
-                  Cooking makes me feel proud because I can make food for myself
-                  and my family.
+                  Large and majestic, Maine Coons are gentle giants with long
+                  fur and friendly personalities. Great family pets!
                 </p>
               </div>
             </div>
@@ -56,13 +59,13 @@ function AboutPage() {
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img src="/runningman1.jpeg" alt="Running Man Variety Show" />
+                <img src="/bengal.jpg" alt="Bengal Cat" />
               </div>
               <div className="flip-card-back">
-                <h3>Entertainment</h3>
+                <h3>🐆 Bengal</h3>
                 <p>
-                  Watching Running Man Korea helps me laugh and forget stress
-                  from school.
+                  Exotic and energetic, Bengal cats have a wild appearance with
+                  spotted or marbled coats. Perfect for active homes!
                 </p>
               </div>
             </div>
@@ -71,27 +74,30 @@ function AboutPage() {
       </section>
 
       <section className="content-section1">
-        <h2>My Journey</h2>
+        <h2>🐾 The Meow World Journey 🐾</h2>
         <ol>
           <li>
-            Basketball became my favorite hobby when I was 12, playing in our
-            backyard.
+            Our passion for cats started when we adopted our first kitten in
+            2018, which opened our eyes to the wonderful feline world.
           </li>
           <li>
-            In 2022, I began learning to play the drums and enjoy making music.
+            In 2020, we decided to create this community to share cat care tips,
+            breed information, and heartwarming stories.
           </li>
           <li>
-            Cooking caught my interest as a kid whenever I watched and helped my
-            mom.
+            We've helped rescue over 500 cats and found them loving homes
+            through our shelter partnerships.
           </li>
           <li>
-            Since 2018, watching Running Man Korea has been one of my comfort
-            shows.
+            Since then, our community has grown to include thousands of cat
+            lovers from around the globe sharing their experiences and love for
+            cats!
           </li>
         </ol>
         <blockquote>
-          "Hobbies help me stay happy, learn new skills, and enjoy life every
-          day."
+          "Cats teach us about independence, grace, and the simple joy of a good
+          purr. They fill our lives with love, laughter, and unconditional
+          companionship."
         </blockquote>
       </section>
       <Footer />

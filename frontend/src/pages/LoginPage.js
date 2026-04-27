@@ -45,7 +45,16 @@ const LoginPage = () => {
       <Nav />
       <div className="plain-section">
         <div className="container">
-          <h1 className="map-title">Login to TheFolio</h1>
+          <h1 className="map-title">🐱 Welcome Back to Meow World 🐱</h1>
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "1.1rem",
+              marginBottom: "20px",
+            }}
+          >
+            Login to join our purrfect cat community!
+          </p>
 
           {error && (
             <div
@@ -96,7 +105,7 @@ const LoginPage = () => {
                 />
 
                 <button type="submit" disabled={loading}>
-                  {loading ? "Logging in..." : "Login"}
+                  {loading ? "Meowing in..." : "🐾 Login & Purr 🐾"}
                 </button>
               </form>
 
@@ -107,12 +116,12 @@ const LoginPage = () => {
                   fontSize: "1.1rem",
                 }}
               >
-                Don't have an account?{" "}
+                New to our cat paradise?{" "}
                 <Link
                   to="/register"
-                  style={{ color: "var(--royal)", fontWeight: "bold" }}
+                  style={{ color: "var(--cat-orange)", fontWeight: "bold" }}
                 >
-                  Register here
+                  Join the purr-ty!
                 </Link>
               </p>
             </div>

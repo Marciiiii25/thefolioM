@@ -39,7 +39,7 @@ const CreatePostPage = () => {
       <Nav />
       <div className="plain-section">
         <div className="container">
-          <h1 className="map-title">Create a New Post</h1>
+          <h1 className="map-title">📝 Share Your Cat Story 📝</h1>
 
           {error && (
             <div
@@ -66,21 +66,21 @@ const CreatePostPage = () => {
           <div className="form-card">
             <div className="form-wrapper">
               <form onSubmit={handleSubmit} className="styled-form">
-                <label htmlFor="title">Post Title</label>
+                <label htmlFor="title">🐱 Story Title</label>
                 <input
                   id="title"
                   type="text"
-                  placeholder="Enter your post title"
+                  placeholder="Give your cat story a purrfect title..."
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
                   disabled={loading}
                 />
 
-                <label htmlFor="body">Post Content</label>
+                <label htmlFor="body">😸 Your Cat Adventure</label>
                 <textarea
                   id="body"
-                  placeholder="Write your post here..."
+                  placeholder="Tell us your amazing cat story, tips, or experience..."
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
                   rows={12}
@@ -94,7 +94,7 @@ const CreatePostPage = () => {
                 />
 
                 <div>
-                  <label htmlFor="image">Upload Cover Image (Optional)</label>
+                  <label htmlFor="image">📸 Add a Cat Photo (Optional)</label>
                   <input
                     id="image"
                     type="file"
@@ -106,7 +106,7 @@ const CreatePostPage = () => {
                 </div>
 
                 <button type="submit" disabled={loading}>
-                  {loading ? "Publishing..." : "Publish Post"}
+                  {loading ? "Publishing..." : "🐾 Publish Story 🐾"}
                 </button>
               </form>
             </div>

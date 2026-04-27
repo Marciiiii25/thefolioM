@@ -49,8 +49,10 @@ const AdminPage = () => {
     <>
       <Nav />
       <div className="plain-section">
-        <h1>Admin Dashboard</h1>
-        <p>Manage users, posts, and contact messages.</p>
+        <h1>🐱 Cat Kingdom Admin Control 🐱</h1>
+        <p>
+          Manage our purrfect community of cat lovers, stories, and messages.
+        </p>
       </div>
       <div className="container">
         <div className="admin-tabs">
@@ -58,19 +60,19 @@ const AdminPage = () => {
             onClick={() => setTab("users")}
             className={tab === "users" ? "active" : ""}
           >
-            Members ({users.length})
+            👥 Whisker Friends ({users.length})
           </button>
           <button
             onClick={() => setTab("posts")}
             className={tab === "posts" ? "active" : ""}
           >
-            All Posts ({posts.length})
+            📚 Cat Stories ({posts.length})
           </button>
           <button
             onClick={() => setTab("messages")}
             className={tab === "messages" ? "active" : ""}
           >
-            Messages ({messages.length})
+            💌 Community Meows ({messages.length})
           </button>
         </div>
         {loading ? (
@@ -81,10 +83,10 @@ const AdminPage = () => {
               <table className="admin-table">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>🐱 Whisker Friend Name</th>
+                    <th>📧 Email</th>
+                    <th>✨ Status</th>
+                    <th>⚙️ Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -116,10 +118,10 @@ const AdminPage = () => {
               <table className="admin-table">
                 <thead>
                   <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>😸 Cat Story Title</th>
+                    <th>✍️ Author</th>
+                    <th>📖 Status</th>
+                    <th>⚙️ Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -151,10 +153,10 @@ const AdminPage = () => {
               <table className="admin-table">
                 <thead>
                   <tr>
-                    <th>Sender</th>
-                    <th>Email</th>
-                    <th>Message</th>
-                    <th>Date</th>
+                    <th>😻 Sender Name</th>
+                    <th>📧 Email</th>
+                    <th>💬 Meow Message</th>
+                    <th>📅 Date</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -164,7 +166,7 @@ const AdminPage = () => {
                         colSpan="4"
                         style={{ textAlign: "center", padding: "2rem" }}
                       >
-                        No messages yet.
+                        No purrfect messages yet. 🐱
                       </td>
                     </tr>
                   ) : (

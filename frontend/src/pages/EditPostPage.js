@@ -68,7 +68,7 @@ const EditPostPage = () => {
       <Nav />
       <div className="plain-section">
         <div className="container">
-          <h1 className="map-title">Edit Post</h1>
+          <h1 className="map-title">✏️ Edit Your Cat Story ✏️</h1>
 
           {error && (
             <div
@@ -95,21 +95,21 @@ const EditPostPage = () => {
           <div className="form-card">
             <div className="form-wrapper">
               <form onSubmit={handleSubmit} className="styled-form">
-                <label htmlFor="title">Post Title</label>
+                <label htmlFor="title">🐱 Story Title</label>
                 <input
                   id="title"
                   type="text"
-                  placeholder="Enter your post title"
+                  placeholder="Update your purrfect title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
                   disabled={saving}
                 />
 
-                <label htmlFor="body">Post Content</label>
+                <label htmlFor="body">😸 Your Cat Adventure</label>
                 <textarea
                   id="body"
-                  placeholder="Write your post here..."
+                  placeholder="Update your amazing cat story..."
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
                   rows={12}
@@ -123,7 +123,7 @@ const EditPostPage = () => {
                 />
 
                 <div>
-                  <label>Current Image:</label>
+                  <label>📷 Current Photo:</label>
                   <img
                     src={`${process.env.REACT_APP_API_URL?.replace("/api", "")}/uploads/${post.image}`}
                     alt="Current"
@@ -141,14 +141,12 @@ const EditPostPage = () => {
                       marginTop: "5px",
                     }}
                   >
-                    Upload new image to replace (optional)
+                    Upload new photo to replace (optional)
                   </p>
                 </div>
 
                 <div>
-                  <label htmlFor="image">
-                    Upload New Cover Image (Optional)
-                  </label>
+                  <label htmlFor="image">📸 Update Cat Photo (Optional)</label>
                   <input
                     id="image"
                     type="file"
@@ -160,7 +158,7 @@ const EditPostPage = () => {
                 </div>
 
                 <button type="submit" disabled={saving}>
-                  {saving ? "Saving..." : "Update Post"}
+                  {saving ? "Saving..." : "🐾 Save Changes 🐾"}
                 </button>
               </form>
             </div>

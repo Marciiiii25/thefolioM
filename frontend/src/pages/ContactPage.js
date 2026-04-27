@@ -43,7 +43,7 @@ function ContactPage() {
     try {
       await API.post("/contact", formData);
       setSuccess(
-        `Thank you, ${formData.name}! Your message has been sent to admin.`,
+        `Purr-fect! Thank you, ${formData.name}! Your message has been sent to our cat community team.`,
       );
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
@@ -60,23 +60,24 @@ function ContactPage() {
     <>
       {/* Plain Text Section */}
       <section className="plain-section">
-        <h1>Contact & Resources</h1>
+        <h1>🐱 Connect with Us 🐱</h1>
         <p
           style={{
             maxWidth: "600px",
             margin: "10px auto 0",
             textAlign: "center",
-            color: "#3d230a",
+            color: "var(--navy)",
           }}
         >
-          Get in touch or explore resources to learn more about my passions in
-          sports, music, and creativity.
+          Have cat questions, stories, or tips to share? We'd love to hear from
+          you! Connect with our community of cat enthusiasts and help spread the
+          meow!
         </p>
       </section>
 
       {/* Contact Form Section */}
       <section className="content-section">
-        <h2>Contact Me</h2>
+        <h2>📧 Send Us a Message</h2>
         {success && (
           <div
             className="alert-success"
@@ -128,10 +129,10 @@ function ContactPage() {
             disabled={loading}
           />
 
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">Your Cat Story or Question</label>
           <textarea
             id="message"
-            placeholder="Your Message"
+            placeholder="Tell us about your favorite cat moment, ask for advice, or share your cat care tips!"
             rows="5"
             required
             value={formData.message}
@@ -140,45 +141,54 @@ function ContactPage() {
           ></textarea>
 
           <button type="submit" disabled={loading}>
-            {loading ? "Sending..." : "Send Message"}
+            {loading ? "Sending..." : "Send Meow Message 💌"}
           </button>
         </form>
       </section>
 
       {/* Resources Section */}
       <section className="content-section">
-        <h2>Resources</h2>
+        <h2>🐾 Cat Resources & Communities</h2>
         <div className="resources-container">
           <a
-            href="https://www.basketball-reference.com/"
+            href="https://www.cattime.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="resource-card"
           >
-            <h3>Basketball Reference</h3>
-            <p>Comprehensive stats and tutorials for basketball enthusiasts.</p>
+            <h3>😻 Cat Time</h3>
+            <p>
+              Comprehensive cat care guides, breed info, and expert advice for
+              cat parents.
+            </p>
           </a>
           <a
-            href="https://www.drumeo.com/"
+            href="https://www.aspca.org/pet-care/cat-care"
             target="_blank"
             rel="noopener noreferrer"
             className="resource-card"
           >
-            <h3>Drumming Online</h3>
-            <p>Learn drums online with videos and sheet music.</p>
+            <h3>🏥 ASPCA Cat Care</h3>
+            <p>
+              Professional cat health and wellness information from animal
+              experts.
+            </p>
           </a>
           <a
-            href="https://www.allrecipes.com/"
+            href="https://www.reddit.com/r/cats/"
             target="_blank"
             rel="noopener noreferrer"
             className="resource-card"
           >
-            <h3>Creative Cooking Hub</h3>
-            <p>Recipes and cooking techniques for creative cooking.</p>
+            <h3>👥 Cat Community</h3>
+            <p>
+              Join millions of cat lovers sharing photos, stories, and advice on
+              Reddit.
+            </p>
           </a>
         </div>
 
-        <h2 className="map-title">Find Me Here</h2>
+        <h2 className="map-title">Visit Our Sanctuary</h2>
 
         <div className="map-container">
           <iframe
@@ -189,7 +199,7 @@ function ContactPage() {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Google Maps Location"
+            title="Cat Sanctuary Location"
           ></iframe>
         </div>
       </section>
